@@ -26,8 +26,8 @@ moleculeA1
 
 Cluster 0
 ------------
-moleculeA
-moleculeA1
+moleculeE
+moleculeE1
 
 Cluster 1
 ------------
@@ -40,8 +40,43 @@ moleculeD
 
 Cluster 3
 ------------
-moleculeE
+moleculeA
 
 Cluster 4
 ------------
+moleculeA1
+
+Cluster 0
+------------
+moleculeA
+moleculeA1
+
+Cluster 1
+------------
+moleculeE
 moleculeE1
+
+Cluster 2
+------------
+moleculeC
+moleculeC
+
+Cluster 3
+------------
+moleculeD
+
+Cluster 0
+------------
+moleculeE
+moleculeE1
+moleculeC
+moleculeC
+
+Cluster 1
+------------
+moleculeA
+moleculeA1
+
+Cluster 2
+------------
+moleculeD

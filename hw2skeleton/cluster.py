@@ -81,7 +81,6 @@ def cluster_by_partitioning(active_sites, k):
 
         change = False
         for s in seq:
-
             distances = [(idx, compute_similarity(s, cent)) for idx, cent in enumerate(cents)]
             min_idx, _ = min(distances, key=lambda t:t[1])
             cluster = clusters[min_idx]
