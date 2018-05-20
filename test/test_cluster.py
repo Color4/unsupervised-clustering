@@ -1,6 +1,7 @@
-from hw2skeleton import cluster
-from hw2skeleton import io
+from clustering_algorithms import cluster
+from clustering_algorithms import io
 import os
+
 
 def test_similarity():
     filename_a = os.path.join("data", "moleculeA.pdb")
@@ -11,6 +12,7 @@ def test_similarity():
 
     # update this assertion
     assert cluster.compute_similarity(activesite_a, activesite_b) == 0.0
+
 
 def test_partition_clustering():
     # tractable subset
@@ -24,6 +26,7 @@ def test_partition_clustering():
     # update this assertion
     assert cluster.cluster_by_partitioning(active_sites) == []
 
+
 def test_hierarchical_clustering():
     # tractable subset
     pdb_ids = [276, 4629, 10701]
@@ -32,7 +35,6 @@ def test_hierarchical_clustering():
     for id in pdb_ids:
         filepath = os.path.join("data", "%i.pdb"%id)
         active_sites.append(io.read_active_site(filepath))
-    
 
     # update this assertion
     assert cluster.cluster_hierarchically(active_sites) == []
