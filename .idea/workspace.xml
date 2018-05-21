@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c5f4a40-d0a6-4cc5-9afa-0df73c0772a6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cluster_output/partitioning" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/clustering_algorithms/cluster.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/clustering_algorithms/io.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/clustering_algorithms/main.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/clustering_algorithms/utils.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2skeleton/__main__.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clustering_algorithms/cluster.py" afterPath="$PROJECT_DIR$/clustering_algorithms/cluster.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clustering_algorithms/visualize_clusters.py" afterPath="$PROJECT_DIR$/clustering_algorithms/visualize_clusters.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,22 +15,20 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/hw2_skeleton$visualize_clusters.coverage" NAME="visualize_clusters Coverage Results" MODIFIED="1526855061527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/clustering_algorithms" />
-    <SUITE FILE_PATH="coverage/hw2_skeleton$main.coverage" NAME="main Coverage Results" MODIFIED="1526855069126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/clustering_algorithms" />
+    <SUITE FILE_PATH="coverage/hw2_skeleton$visualize_clusters.coverage" NAME="visualize_clusters Coverage Results" MODIFIED="1526857505356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/clustering_algorithms" />
+    <SUITE FILE_PATH="coverage/hw2_skeleton$main.coverage" NAME="main Coverage Results" MODIFIED="1526866522010" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/clustering_algorithms" />
     <SUITE FILE_PATH="coverage/hw2_skeleton$test.coverage" NAME="test Coverage Results" MODIFIED="1518154764127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hw2_skeleton$__main__.coverage" NAME="__main__ Coverage Results" MODIFIED="1526844058297" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw2skeleton" />
     <SUITE FILE_PATH="coverage/hw2_skeleton$cluster.coverage" NAME="cluster Coverage Results" MODIFIED="1518148476972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hw2skeleton" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/clustering_algorithms/main.py">
+      <file leaf-file-name="visualize_clusters.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/clustering_algorithms/visualize_clusters.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="49" lean-forward="true" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="15">
+              <caret line="1" column="17" lean-forward="false" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -41,41 +36,23 @@
       <file leaf-file-name="cluster.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clustering_algorithms/cluster.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="140" column="25" lean-forward="true" selection-start-line="140" selection-start-column="25" selection-end-line="140" selection-end-column="25" />
+            <state relative-caret-position="383">
+              <caret line="215" column="55" lean-forward="true" selection-start-line="215" selection-start-column="55" selection-end-line="215" selection-end-column="55" />
               <folding>
-                <element signature="e#0#44#0" expanded="true" />
+                <element signature="e#13#87#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utils.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/clustering_algorithms/utils.py">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/clustering_algorithms/main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
-              <caret line="23" column="23" lean-forward="true" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="visualize_clusters.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/clustering_algorithms/visualize_clusters.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="partitioning" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cluster_output/partitioning">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="945">
-              <caret line="63" column="4" lean-forward="false" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="4" />
-              <folding />
+              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#96#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -109,10 +86,11 @@
         <option value="$PROJECT_DIR$/hw2skeleton/main.py" />
         <option value="$PROJECT_DIR$/test/test_io.py" />
         <option value="$PROJECT_DIR$/test/test_cluster.py" />
-        <option value="$PROJECT_DIR$/clustering_algorithms/visualize_clusters.py" />
+        <option value="$PROJECT_DIR$/clustering_algorithms/utils.py" />
         <option value="$PROJECT_DIR$/clustering_algorithms/main.py" />
         <option value="$PROJECT_DIR$/clustering_algorithms/cluster.py" />
-        <option value="$PROJECT_DIR$/clustering_algorithms/utils.py" />
+        <option value="$PROJECT_DIR$/clustering_algorithms/visualize_clusters.py" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
       </list>
     </option>
   </component>
@@ -157,11 +135,6 @@
               <item name="hw2-skeleton" type="b2602c69:ProjectViewProjectNode" />
               <item name="hw2-skeleton" type="462c0819:PsiDirectoryNode" />
               <item name="clustering_algorithms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hw2-skeleton" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hw2-skeleton" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hw2-skeleton" type="b2602c69:ProjectViewProjectNode" />
@@ -244,7 +217,7 @@
       <module name="hw2-skeleton" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/clustering_algorithms/main.py" />
-      <option name="PARAMETERS" value="-P ../data ../cluster_output/partitioning" />
+      <option name="PARAMETERS" value="-H ../data ../cluster_output/hierarchical" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
@@ -329,7 +302,21 @@
       <option name="project" value="LOCAL" />
       <updated>1526855106882</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add new files">
+      <created>1526855302456</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1526855302456</updated>
+    </task>
+    <task id="LOCAL-00004" summary="visualization of partitioning clustering">
+      <created>1526866429765</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1526866429765</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -368,11 +355,13 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="updated readme" />
     <MESSAGE value="reorganized code structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="reorganized code structure" />
+    <MESSAGE value="add new files" />
+    <MESSAGE value="visualization of partitioning clustering" />
+    <option name="LAST_COMMIT_MESSAGE" value="visualization of partitioning clustering" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -485,14 +474,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hw2skeleton/cluster.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-909">
@@ -558,8 +539,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cluster_output/partitioning">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="63" column="4" lean-forward="false" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="4" />
+        <state relative-caret-position="1035">
+          <caret line="69" column="4" lean-forward="false" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -572,38 +553,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clustering_algorithms/visualize_clusters.py">
+    <entry file="file://$PROJECT_DIR$/clustering_algorithms/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="163">
+          <caret line="23" column="23" lean-forward="true" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/clustering_algorithms/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="49" lean-forward="true" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+        <state relative-caret-position="345">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#96#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/clustering_algorithms/cluster.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="140" column="25" lean-forward="true" selection-start-line="140" selection-start-column="25" selection-end-line="140" selection-end-column="25" />
+        <state relative-caret-position="383">
+          <caret line="215" column="55" lean-forward="true" selection-start-line="215" selection-start-column="55" selection-end-line="215" selection-end-column="55" />
           <folding>
-            <element signature="e#0#44#0" expanded="true" />
+            <element signature="e#13#87#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clustering_algorithms/utils.py">
+    <entry file="file://$PROJECT_DIR$/cluster_output/hierarchical">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="23" lean-forward="true" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+        <state relative-caret-position="30607">
+          <caret line="2115" column="11" lean-forward="true" selection-start-line="2115" selection-start-column="11" selection-end-line="2115" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="10" lean-forward="true" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clustering_algorithms/visualize_clusters.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="17" lean-forward="false" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="17" />
           <folding />
         </state>
       </provider>

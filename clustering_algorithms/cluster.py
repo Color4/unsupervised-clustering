@@ -213,7 +213,7 @@ def cluster_hierarchically(active_sites, k):
         if len(all_clusters)==k: 
             break 
        
-    return(convert_to_object_3d(all_clusters, seq_dict))
+    return convert_to_object_3d(all_clusters, seq_dict)
 
 
 
