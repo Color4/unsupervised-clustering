@@ -1,11 +1,7 @@
-from .utils import Atom, Residue, ActiveSite
-from .io import read_active_sites, read_active_site, write_clustering, write_mult_clusterings
-
-# my imports 
+# my imports
 from pyxdameraulevenshtein import damerau_levenshtein_distance as distance
 import random 
 import numpy as np
-import scipy 
 import itertools
 
 
@@ -99,9 +95,9 @@ def cluster_by_partitioning(active_sites, k):
 
     seq, seq_dict = get_aa_seq(active_sites)
 
-    cents = random.sample(seq, k)
-
+    cents = generate_cents(seq, k)
     clusters = [[] for i in range(k)]
+
     change = True
 
     while change:
@@ -109,7 +105,7 @@ def cluster_by_partitioning(active_sites, k):
         change = False
         for s in seq:
             distances = [(idx, compute_similarity(s, cent)) for idx, cent in enumerate(cents)]
-            min_idx, _ = min(distances, key=lambda t: t[1])
+            min_idx, _ = min(distances, key=lambda t:t[1])
             cluster = clusters[min_idx]
             if s not in cluster:
                 cluster.append(s)
@@ -120,7 +116,21 @@ def cluster_by_partitioning(active_sites, k):
 
         cents = [avg_string(cluster) for cluster in clusters]
 
-    return convert_to_object_2d(clusters, seq_dict)
+    return convert_to_object_2d(clusters, seq_dict), clusters
+
+
+def generate_cents(seq, k):
+
+    cents = random.sample(seq, k)
+    dups = True
+
+    while dups:
+        if not any(cents.count(x) > 1 for x in cents):
+            dups = False
+        else:
+            cents = random.sample(seq, k)
+
+    return cents
 
 
 def convert_to_object_2d(clusters, seq_dict):
