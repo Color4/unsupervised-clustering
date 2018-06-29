@@ -68,7 +68,6 @@ def convert_to_aa_str(sequence):
 
     return aa_seq
 
-
 def get_aa_seq(active_sites):
     """
 
@@ -139,87 +138,59 @@ def convert_to_object_2d(clusters, seq_dict):
 
 
 def convert_to_object_3d(clusters_list, seq_dict):
-    clusters_list = [[[seq_dict[item] for item in cluster] for cluster in clusters] for clusters in clusters_list]
-    return clusters_list
 
+    all_clusters = []
 
-def cluster(clusters):
+    for clusters in clusters_list:
+        new_cluster = []
+        for cluster in clusters:
+            new_cluster.append(seq_dict[cluster])
+        all_clusters.append(new_cluster)
 
-    size = len(clusters)
-    sim_matrix = np.empty((size, size))
-
-    for i in range(size):
-        for j in range(size):
-            sim_matrix[i][j] = single_linkage(clusters[i], clusters[j])
-    i, j, distance = minimum_position(sim_matrix)
-    return merge_clusters(i, j, clusters, size), distance
+    return all_clusters
 
 
 def single_linkage(cluster1, cluster2):
 
-    tuples = list(itertools.product(cluster1, cluster2))
-    distances = [distance(t[0], t[1]) for t in tuples]
+    avg_cluster1 = avg_string(cluster1)
+    avg_cluster2 = avg_string(cluster2)
 
-    return min(distances)
+    return distance(avg_cluster1, avg_cluster2)
 
-
-def minimum_position(matrix):
-
-    np.fill_diagonal(matrix, np.inf)
-    min_loc = np.where(matrix == np.min(matrix))
-
-    min_i = (min_loc[0])[0]
-    min_j = (min_loc[1])[0]
-
-
-    return min_i, min_j, matrix.min()
-
-
-def merge_clusters(i, j, clusters, size):
-
-    merged_cluster = []
-    old_clusters = []
-    new_clusters_all = []
-
-    for cluster_count in range(size):
-        if cluster_count == i or cluster_count == j:
-            merged_cluster += clusters[cluster_count]
-        else:
-            old_clusters.append(clusters[cluster_count])
-    return([merged_cluster] + old_clusters)
-   
 
 def cluster_hierarchically(active_sites, k):
-    """
-    Cluster the given set of ActiveSite instances using a hierarchical algorithm.                                                                 
 
-    Input: a list of ActiveSite instances
-    Output: a list of clusterings
-            (each clustering is a list of lists of Sequence objects)
-    """
     seq, seq_dict = get_aa_seq(active_sites)
-    all_clusters = [[]]
-
     clusters = [[seq[i]] for i in range(len(seq))]
-    distances = []
 
-    max_d = 0
-    max_d_loc = 0
+    while len(clusters) > k:
 
-    while len(clusters) > 1:
-        clusters, distance = cluster(clusters)
-        distances.append(distance)
-        all_clusters += [clusters]
-        if len(all_clusters)==k: 
-            break 
-       
-    return convert_to_object_3d(all_clusters, seq_dict)
+        i, j = find_most_similar(clusters)
+        clusters = merge_clusters(clusters, i, j)
+
+    return convert_to_object_3d(clusters, seq_dict), clusters
 
 
+def find_most_similar(clusters):
+
+    size = len(clusters)
+    similarities = {}
+
+    for i in range(size-1):
+        for j in range(i+1, size-1):
+            similarities[(i, j)] = single_linkage(clusters[i], clusters[j])
+
+    return min(similarities, key=similarities.get)
 
 
+def merge_clusters(clusters, i, j):
 
+    new_clusters = []
 
+    for item in clusters:
+        if item not in [clusters[i], clusters[j]]:
+            new_clusters.append(item)
 
+    new_clusters.append(clusters[i] + clusters[j])
 
- 
+    return new_clusters

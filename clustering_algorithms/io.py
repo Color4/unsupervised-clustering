@@ -42,7 +42,7 @@ def read_active_site(filepath):
 
     # open pdb file
     with open(filepath, "r") as f:
-        print(filepath)
+        # print(filepath)
         # iterate over each line in the file
         for line in f:
             if line[0:3] != 'TER':
