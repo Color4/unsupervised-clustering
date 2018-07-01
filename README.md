@@ -4,12 +4,16 @@
 
 # Use
 
-`python clustering_algorithms/main.py [-P| -H] <pdb directory> <output file>"`
+`python clustering_algorithms/main.py [-P| -H | -T] <pdb directory> <output file>"`
+
+-P: k-means clustering
+-H: agglomerative hierarchical clustering
+-T: compare clustering methods
 
 # Hierarchical and Partitioning Clustering  
 
 ## Similarity Metric
-I chose to use a Damerau-Levenshtein edit distance<sup>[1](#Python DL)</sup>
+I chose to use a Damerau-Levenshtein edit distance <sup>[1](#Python DL)</sup>
  algorithm to calculate the distance between two amino acid sequences. This algorithm quantifies the 'distance' between two strings by counting the number of operations that are needed to transform one string into another. In this algorithm the operations allowed are inserting a letter, deleting a letter, substituting a letter or transposing a letter. This is an improvement on the Levenshtein distance algorithm that proceeded it as transpositions are common errors, both in the written language, and may have a viable biological relevance.<sup>[2](#Explanation)</sup>
 
 
