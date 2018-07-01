@@ -8,8 +8,8 @@ from flaky import flaky
 class TestSimilarityClustering(unittest.TestCase):
 
     def test_no_similarity(self):
-        filename_a = os.path.join("..", "data", "276.pdb")
-        filename_b = os.path.join("..", "data", "4629.pdb")
+        filename_a = os.path.join("data", "276.pdb")
+        filename_b = os.path.join("data", "4629.pdb")
 
         activesite_a = io.read_active_site(filename_a)
         activesite_b = io.read_active_site(filename_b)
@@ -21,8 +21,8 @@ class TestSimilarityClustering(unittest.TestCase):
         self.assertEqual(cluster.compute_similarity(seq_a, seq_b), 8)
 
     def test_identical_similarity(self):
-        filename_a = os.path.join("..", "data", "276.pdb")
-        filename_b = os.path.join("..", "data", "276.pdb")
+        filename_a = os.path.join("data", "276.pdb")
+        filename_b = os.path.join("data", "276.pdb")
 
         activesite_a = io.read_active_site(filename_a)
         activesite_b = io.read_active_site(filename_b)
@@ -67,7 +67,7 @@ class TestSimilarityClustering(ClusterTestCase):
 
         active_sites = []
         for id in pdb_ids:
-            filepath = os.path.join("..", "data", "%i.pdb"%id)
+            filepath = os.path.join("data", "%i.pdb"%id)
             active_sites.append(io.read_active_site(filepath))
 
         clusters = cluster.cluster_by_partitioning(active_sites, len(pdb_ids))[0]
@@ -80,7 +80,7 @@ class TestSimilarityClustering(ClusterTestCase):
 
         active_sites = []
         for id in pdb_ids:
-            filepath = os.path.join("..", "data", "%i.pdb" % id)
+            filepath = os.path.join("data", "%i.pdb" % id)
             active_sites.append(io.read_active_site(filepath))
 
         clusters = cluster.cluster_by_partitioning(active_sites, 1)[0]
@@ -96,7 +96,7 @@ class TestSimilarityClustering(ClusterTestCase):
             try:
                 active_sites = []
                 for id in pdb_ids:
-                    filepath = os.path.join("..", "data", "%i.pdb" % id)
+                    filepath = os.path.join("data", "%i.pdb" % id)
                     active_sites.append(io.read_active_site(filepath))
 
                 clusters = cluster.cluster_by_partitioning(active_sites, 2)[0]
@@ -118,7 +118,7 @@ class TestHierarchicalClustering(ClusterTestCase):
 
         active_sites = []
         for id in pdb_ids:
-            filepath = os.path.join("..", "data", "%i.pdb"%id)
+            filepath = os.path.join("data", "%i.pdb"%id)
             active_sites.append(io.read_active_site(filepath))
 
         clusters = cluster.cluster_hierarchically(active_sites, len(pdb_ids))[0]
@@ -132,7 +132,7 @@ class TestHierarchicalClustering(ClusterTestCase):
 
         active_sites = []
         for id in pdb_ids:
-            filepath = os.path.join("..", "data", "%i.pdb" % id)
+            filepath = os.path.join("data", "%i.pdb" % id)
             active_sites.append(io.read_active_site(filepath))
 
         clusters = cluster.cluster_hierarchically(active_sites, 1)[0]
@@ -148,7 +148,7 @@ class TestHierarchicalClustering(ClusterTestCase):
         # Try it four times, since test is flaky (because of inherent randomness)
         active_sites = []
         for id in pdb_ids:
-            filepath = os.path.join("..", "data", "%i.pdb" % id)
+            filepath = os.path.join("data", "%i.pdb" % id)
             active_sites.append(io.read_active_site(filepath))
 
         clusters = cluster.cluster_hierarchically(active_sites, 2)[0]
