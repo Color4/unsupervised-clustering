@@ -13,8 +13,7 @@
 # Hierarchical and Partitioning Clustering  
 
 ## Similarity Metric
-I chose to use a Damerau-Levenshtein edit distance <sup>[1](#Python DL)</sup>
- algorithm to calculate the distance between two amino acid sequences. This algorithm quantifies the 'distance' between two strings by counting the number of operations that are needed to transform one string into another. In this algorithm the operations allowed are inserting a letter, deleting a letter, substituting a letter or transposing a letter. This is an improvement on the Levenshtein distance algorithm that proceeded it as transpositions are common errors, both in the written language, and may have a viable biological relevance.<sup>[2](#Explanation)</sup>
+I chose to use a Damerau-Levenshtein edit distance <sup>[1](#Python DL)</sup>algorithm to calculate the distance between two amino acid sequences. This algorithm quantifies the 'distance' between two strings by counting the number of operations that are needed to transform one string into another. In this algorithm the operations allowed are inserting a letter, deleting a letter, substituting a letter or transposing a letter. This is an improvement on the Levenshtein distance algorithm that proceeded it as transpositions are common errors, both in the written language, and may have a viable biological relevance.<sup>[2](#Explanation)</sup>
 
 
 I decided that sequence similarity was the best indication of similarity between proteins as this naturally encompasses
@@ -28,7 +27,7 @@ which may not be useful in assessing the functional similarities between protein
 For a partitioning algorithm, I chose a k-means clustering algorithm that calculated centroids by taking the “average”
 of all the sequences in a given cluster.
 
-K-means clustering involves choosing *k* initial clusters. *K* is defined by the user, and generally has a broader meaning in your data. For example, if a biologist was clustering RNA-seq expression data from 3 cell types- like red blood cells, white blood cells, and platelets- the biologist may specify 3 initial clusters. The number of clusters defines the number of starting points for the algorithm, called centroids. These starting points may be chosen randomly, as is implemented this code, or may try to intelligently pick centroids depending on variables such as the mean or spread of the data.<sup>[3](#Fancy clustering)</sup> All data points are placed into a cluster by a similarity metric, in my case the Damerau-Levenshtein edit distance described above.
+K-means clustering involves choosing *k* initial clusters. *K* is defined by the user, and generally has a broader meaning in your data. For example, if a biologist was clustering RNA-seq expression data from 3 cell types- like red blood cells, white blood cells, and platelets- the biologist may specify 3 initial clusters. The number of clusters defines the number of starting points for the algorithm, called centroids. These starting points may be chosen randomly, as is implemented this code, or may try to intelligently pick centroids depending on variables such as the mean or spread of the data.<sup>[3](#Fancy clustering)</sup>All data points are placed into a cluster by a similarity metric, in my case the Damerau-Levenshtein edit distance described above.
 
 Once all data points are in a cluster, a new centroid is chosen. In my implementation, the "average" string was taken as the new centroid. Average was defined as the string that had the smallest distance to all other strings in the cluster.
 Since I was working with strings
