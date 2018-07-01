@@ -5,4 +5,4 @@ matplotlib
 tabulate
 biopython>=1.7.0
 pyxdameraulevenshtein
-flaky
+parameterized
