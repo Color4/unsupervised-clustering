@@ -6,3 +6,4 @@ tabulate
 biopython>=1.7.0
 pyxdameraulevenshtein
 parameterized
+flaky
