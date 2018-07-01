@@ -7,7 +7,7 @@ import os
     ("4629.pdb", ["ASP", "THR", "ARG", "SER", "LYS", "TYR", "SER", "ASN", "ASP"], [10, 14, 41, 118, 151, 157, 176, 177, 180]),
 ])
 def test_residues(filename, names, numbers):
-    filepath = os.path.join("data", filename)
+    filepath = os.path.join("test", "data", filename)
 
     activesite = io.read_active_site(filepath)
 
@@ -23,7 +23,7 @@ def test_residues(filename, names, numbers):
         [22.707, 23.102, 22.153, 21.077, 23.162, 23.706, 24.777, 23.323, 25.028, 24.167]),
 ])
 def test_atoms(filename, residue_number, atoms, xs, ys, zs):
-    filepath = os.path.join("data", filename)
+    filepath = os.path.join("test", "data", filename)
 
     activesite = io.read_active_site(filepath)
 
