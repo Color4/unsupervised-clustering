@@ -1,7 +1,6 @@
 # HW2 Skeleton
 
-[![Build
-Status](https://travis-ci.org/christacaggiano/hw2-skeleton.svg?branch=master)](https://travis-ci.org/ucsf-bmi-203/hw2-skeleton)
+[![Build Status](https://travis-ci.org/christacaggiano/Unsupervised-clustering.svg?branch=master)](https://travis-ci.org/christacaggiano/Unsupervised-clustering)
 
 
 ## Similarity Metric

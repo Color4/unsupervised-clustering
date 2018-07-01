@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7c5f4a40-d0a6-4cc5-9afa-0df73c0772a6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -394,7 +393,14 @@
       <option name="project" value="LOCAL" />
       <updated>1530484942866</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="readded flaky">
+      <created>1530485041044</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1530485041044</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -471,7 +477,8 @@
     <MESSAGE value="updated requirements" />
     <MESSAGE value="updated hierarchical clustering to give correct output" />
     <MESSAGE value="updated stupid tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated stupid tests" />
+    <MESSAGE value="readded flaky" />
+    <option name="LAST_COMMIT_MESSAGE" value="readded flaky" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
