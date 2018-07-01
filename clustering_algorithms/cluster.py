@@ -1,9 +1,6 @@
 # my imports
 from pyxdameraulevenshtein import damerau_levenshtein_distance as distance
 import random 
-import numpy as np
-import itertools
-
 
 def compute_similarity(a, b):
     """
@@ -137,19 +134,6 @@ def convert_to_object_2d(clusters, seq_dict):
     return clusters
 
 
-def convert_to_object_3d(clusters_list, seq_dict):
-
-    all_clusters = []
-
-    for clusters in clusters_list:
-        new_cluster = []
-        for cluster in clusters:
-            new_cluster.append(seq_dict[cluster])
-        all_clusters.append(new_cluster)
-
-    return all_clusters
-
-
 def single_linkage(cluster1, cluster2):
 
     avg_cluster1 = avg_string(cluster1)
@@ -168,7 +152,7 @@ def cluster_hierarchically(active_sites, k):
         i, j = find_most_similar(clusters)
         clusters = merge_clusters(clusters, i, j)
 
-    return convert_to_object_3d(clusters, seq_dict), clusters
+    return convert_to_object_2d(clusters, seq_dict), clusters
 
 
 def find_most_similar(clusters):
@@ -176,20 +160,17 @@ def find_most_similar(clusters):
     size = len(clusters)
     similarities = {}
 
-    for i in range(size-1):
-        for j in range(i+1, size-1):
+    for i in range(size):
+        for j in range(i+1, size):
             similarities[(i, j)] = single_linkage(clusters[i], clusters[j])
 
+    print(similarities)
     return min(similarities, key=similarities.get)
 
 
 def merge_clusters(clusters, i, j):
 
-    new_clusters = []
-
-    for item in clusters:
-        if item not in [clusters[i], clusters[j]]:
-            new_clusters.append(item)
+    new_clusters = [item for item in clusters if item not in [clusters[i], clusters[j]]]
 
     new_clusters.append(clusters[i] + clusters[j])
 

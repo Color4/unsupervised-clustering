@@ -1,7 +1,7 @@
 import glob
 import os
 from .utils import Atom, Residue, ActiveSite
-
+from tabulate import tabulate
 
 def read_active_sites(dir):
     """
@@ -108,3 +108,6 @@ def write_mult_clusterings(filename, clusterings):
                 out.write("%s\n" % clusters[j][k])
 
     out.close()
+
+def write_similarity(similarity_matrix):
+    print(tabulate(similarity_matrix, tablefmt="pipe"))

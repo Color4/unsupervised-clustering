@@ -1,5 +1,6 @@
 from Bio.SeqUtils.ProtParam import ProteinAnalysis
 import matplotlib.pyplot as plt
+import numpy as np
 
 def calculate_property(cluster, property):
 
@@ -33,21 +34,44 @@ def plot_clusters(sequence_list):
 
 def plot_rankings(sequence_list):
 
-    all_distributions = []
+    isoelectric = []
+    molecular_weight = []
+
     for cluster, i in zip(sequence_list, range(len(sequence_list))):
-        all_distributions.append(calculate_property(cluster, "isoelectric_point"))
+        isoelectric.append(calculate_property(cluster, "isoelectric_point"))
+        molecular_weight.append(calculate_property(cluster, "molecular_weight"))
 
     labels = ["Cluster " + str(i+1) for i in range(len(sequence_list))]
 
-    box = plt.boxplot(all_distributions, labels=labels, patch_artist=True)
-
-    color_list = get_cmap(len(sequence_list)+1)
-    for patch, i in zip(box['boxes'], range(len(sequence_list))):
-        patch.set_facecolor(color_list(i))
-
+    plt.subplot(1, 2, 1)
+    plt.boxplot(isoelectric, labels=labels, patch_artist=True)
     plt.ylabel("Isolectric point")
+
+    plt.subplot(1, 2, 2)
+    plt.boxplot(molecular_weight, labels=labels, patch_artist=True)
+    plt.ylabel("Molecular Weight")
+
     plt.show()
 
 
+def jacard_index(cluster1, cluster2):
 
-def
+    union = list(set(cluster1).union(cluster2))
+    intersection = list(set(cluster1) & set(cluster2))
+
+    return len(intersection)/len(union)
+
+
+def assess_similarity(cluster_list1, cluster_list2):
+    cluster_size = len(cluster_list1)
+
+    similarity = np.zeros((cluster_size, cluster_size))
+
+    for i in range(cluster_size):
+        for j in range(cluster_size):
+            similarity[i, j] = jacard_index(cluster_list1[i], cluster_list2[j])
+
+    return similarity
+
+
+
