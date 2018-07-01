@@ -2,10 +2,17 @@
 
 [![Build Status](https://travis-ci.org/christacaggiano/Unsupervised-clustering.svg?branch=master)](https://travis-ci.org/christacaggiano/Unsupervised-clustering)
 
+# Use
+
+`python clustering_algorithms/main.py [-P| -H] <pdb directory> <output file>"`
+
+# Hierarchical and Partitioning Clustering  
 
 ## Similarity Metric
 I chose to use a Damerau-Levenshtein edit distance<sup>[1](#Python DL)</sup>
  algorithm to calculate the distance between two amino acid sequences. This algorithm quantifies the 'distance' between two strings by counting the number of operations that are needed to transform one string into another. In this algorithm the operations allowed are inserting a letter, deleting a letter, substituting a letter or transposing a letter. This is an improvement on the Levenshtein distance algorithm that proceeded it as transpositions are common errors, both in the written language, and may have a viable biological relevance.<sup>[2](#Explanation)</sup>
+
+
 I decided that sequence similarity was the best indication of similarity between proteins as this naturally encompasses
 some distinguishing properties of proteins- such as charge or hydrophobicity. Sequence similarity also is useful for
 measuring how evolutionarily close two proteins are. Since we often think of proteins that are closer together in
@@ -15,11 +22,18 @@ which may not be useful in assessing the functional similarities between protein
 
 ## Partitioning Algorithm
 For a partitioning algorithm, I chose a k-means clustering algorithm that calculated centroids by taking the “average”
-of all the sequences in a given cluster. This means that I chose the sequence one with the smallest distance to all other
-strings, in hopes that this would be the most representative sequence in its cluster. Since I was working with strings
+of all the sequences in a given cluster.
+
+K-means clustering involves choosing *k* initial clusters. *K* is defined by the user, and generally has a broader meaning in your data. For example, if a biologist was clustering RNA-seq expression data from 3 cell types- like red blood cells, white blood cells, and platelets- the biologist may specify 3 initial clusters. The number of clusters defines the number of starting points for the algorithm, called centroids. These starting points may be chosen randomly, as is implemented this code, or may try to intelligently pick centroids depending on variables such as the mean or spread of the data.<sup>[3](#Fancy clustering)</sup> All data points are placed into a cluster by a similarity metric, in my case the Damerau-Levenshtein edit distance described above.
+
+Once all data points are in a cluster, a new centroid is chosen. In my implementation, the "average" string was taken as the new centroid. Average was defined as the string that had the smallest distance to all other strings in the cluster.
+Since I was working with strings
 and not integers, I felt this was the fairest way to calculate an average. Averaging in this way, however, could be a
 drawback when the sequences in a cluster are very distant. Additionally, this constrains the centroid to be included in
 my set of sequences.
+
+Then, the distance of all data points to the new centroids is calculated. If a data point is closer to the centroid of another cluster, it is deleted from its cluster, and swapped to the new cluster. This is repeated until no swaps are made.<sup>[4](#kmeans explanation)</sup>
+
 
 ## Hierarchical Clustering Algorithm
 My hierarchical clustering was a simple agglomerative clustering with a single linkage. Single linkage was chosen
@@ -39,7 +53,7 @@ were more consistent. Thus, this metric was less useful for hierarchical cluster
 by having a more robust test dataset, many test datasets, by using cross-validation, or a combination of all three.
 
 
-# Comparisions of Methods
+# Comparisons of Methods
 
 
 #  Biological Relevance
@@ -56,3 +70,7 @@ for hierarchical clustering.
  <a name="Python DL">1</a>: https://github.com/gfairchild/pyxDamerauLevenshtein
 
  <a name="Explanation">2</a>: https://www.mathworks.com/matlabcentral/cody/problems/2309-calculate-the-damerau-levenshtein-distance-between-two-strings
+
+ <a name="Fancy clustering">3</a>: http://people.csail.mit.edu/tieu/notebook/kmeans/15_p600-hamerly.pdf
+
+ <a name="kmeans explanation">4</a>: http://bigdata-madesimple.com/possibly-the-simplest-way-to-explain-k-means-algorithm/

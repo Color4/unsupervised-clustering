@@ -2,7 +2,6 @@ from clustering_algorithms import cluster
 from clustering_algorithms import io
 import os
 import unittest
-from flaky import flaky
 
 
 class TestSimilarityClustering(unittest.TestCase):
