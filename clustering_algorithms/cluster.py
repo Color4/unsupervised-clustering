@@ -164,7 +164,6 @@ def find_most_similar(clusters):
         for j in range(i+1, size):
             similarities[(i, j)] = single_linkage(clusters[i], clusters[j])
 
-    print(similarities)
     return min(similarities, key=similarities.get)
 
 
